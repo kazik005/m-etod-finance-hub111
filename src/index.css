@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ocean Teal Financial Palette */
+    --background: 180 20% 98%;
+    --foreground: 180 50% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 180 50% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 50% 10%;
+    --primary: 181 84% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 181 20% 95%;
+    --secondary-foreground: 181 50% 20%;
+    --muted: 181 10% 92%;
+    --muted-foreground: 181 10% 40%;
+    --accent: 171 77% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 181 20% 88%;
+    --input: 181 20% 88%;
+    --ring: 181 84% 32%;
+
+    --chart-1: 181 84% 32%;
+    --chart-2: 171 77% 44%;
+    --chart-3: 191 84% 32%;
+    --chart-4: 161 77% 44%;
+    --chart-5: 201 84% 32%;
+
+    --sidebar: 180 20% 98%;
+    --sidebar-foreground: 180 50% 10%;
+    --sidebar-primary: 181 84% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 171 77% 44%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 181 20% 88%;
+    --sidebar-ring: 181 84% 32%;
+
+    --font-sans: 'DM Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --radius: 0.6rem;
+  }
+
+  .dark {
+    --background: 181 50% 4%;
+    --foreground: 181 10% 95%;
+    --card: 181 50% 6%;
+    --card-foreground: 181 10% 95%;
+    --popover: 181 50% 6%;
+    --popover-foreground: 181 10% 95%;
+    --primary: 181 84% 45%;
+    --primary-foreground: 181 50% 4%;
+    --secondary: 181 40% 12%;
+    --secondary-foreground: 181 10% 95%;
+    --muted: 181 40% 12%;
+    --muted-foreground: 181 10% 60%;
+    --accent: 171 77% 55%;
+    --accent-foreground: 181 50% 4%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 181 10% 95%;
+    --border: 181 40% 15%;
+    --input: 181 40% 15%;
+    --ring: 181 84% 45%;
+
+    --sidebar: 181 50% 6%;
+    --sidebar-foreground: 181 10% 95%;
+    --sidebar-primary: 181 84% 45%;
+    --sidebar-primary-foreground: 181 50% 4%;
+    --sidebar-accent: 181 40% 12%;
+    --sidebar-accent-foreground: 181 10% 95%;
+    --sidebar-border: 181 40% 15%;
+    --sidebar-ring: 181 84% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+  }
+}
+
+.animate-in {
+  animation: animateIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-xl;
+}
+
+.glass-dark {
+  @apply backdrop-blur-md bg-black/40 border border-white/10 shadow-2xl;
+}
